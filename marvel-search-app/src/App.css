@@ -1,23 +1,10 @@
 .hero-thumbnail {
   height: 200px;
   width: 150px;
-}
-
-.comic {
-  background-color: whitesmoke;
-  border: 1px solid #333;
-  border-radius: 10px;
-  height: 250px;
-  margin: 20px;
-  padding: 10px;
-}
-
-.comic-thumbnail-container {
   float: left;
-  margin: 10px;
+  text-align: center;
 }
 
-.comic-data-container {
+.button {
   float: left;
-  margin: 10px;
 }

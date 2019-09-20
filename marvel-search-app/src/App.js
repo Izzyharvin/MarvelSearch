@@ -12,7 +12,8 @@ class App extends Component {
       error: null,
       isLoaded: false,
       heros: [],
-      offset: 0
+      offset: 0,
+      footer: []
     };
   }
 
@@ -99,8 +100,8 @@ class App extends Component {
             }) }*/
                 }
                 <br></br>
-                <a href={heros.urls}>
-                  <img className="hero-thumbnail" src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`} alt="hero-thumbnail" />
+                <a href="">
+                  <img className="hero-thumbnail" src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`} alt="hero-thumbnail"/>
                 </a>
               </div>
             ))}
@@ -114,8 +115,7 @@ class App extends Component {
           <div className="pimg3">
             <div className="ptext">
               <span className="border">
-                {heros.copyright}
-                {heros.attributionText}
+              © 2019 MARVEL, Data provided by Marvel.
               </span>
             </div>
           </div>

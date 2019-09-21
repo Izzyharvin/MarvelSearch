@@ -1,9 +1,13 @@
 // import ReactDOM from "react-dom";
 import React, { Component } from 'react';
 import './App.css';
-import Ironman from "./img/ironman.png";
-import Spiderman from "./img/spider-man.png";
+import Ironman from "../img/ironman.png";
+import Spiderman from "../img/spider-man.png";
+import Navbar from "../components/Navbar";
+import Suggestions from "../components/Suggestions";
 
+
+// const HASH_KEY = process.env.HASH_KEY;
 
 class App extends Component {
   constructor(props) {
@@ -13,7 +17,8 @@ class App extends Component {
       isLoaded: false,
       heros: [],
       offset: 0,
-      footer: []
+      query: '',
+      results:[]
     };
   }
 
@@ -30,6 +35,7 @@ class App extends Component {
           this.setState({
             isLoaded: true,
             heros: heros.data.results,
+            results: heros.data.results,
             offset
           });
         },
@@ -42,6 +48,19 @@ class App extends Component {
           });
         }
       )
+  }
+
+  handleInputChange = () => {
+    this.setState({
+      query: this.search.value
+    }, () => {
+      if (this.state.query && this.state.query.length > 1) {
+        if (this.state.query.length % 2 === 0) {
+          this.getInfo()
+        }
+      } else if (!this.state.query) {
+      }
+    })
   }
 
   render() {
@@ -60,6 +79,7 @@ class App extends Component {
     else {
       return (
         <div className="App">
+          <Navbar />
           <div className="pimg1">
             <div className="ptext">
               <span className="border">
@@ -67,17 +87,12 @@ class App extends Component {
               </span>
             </div>
             <div>
-              <img src={Ironman} className="ironman" alt="ironman"/>
+              <img src={Ironman} className="ironman" alt="ironman" />
             </div>
           </div>
 
           <section className="section section1">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta rem, vitae quos, quasi eum harum recusandae
-            ullam eos neque quia voluptates ipsam, ipsum nesciunt illo nihil ratione distinctio dolorum! Molestias!
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti illum nam beatae eos, cupiditate delectus
-            rem qui facere. Vel vitae harum praesentium minima distinctio, qui dicta obcaecati reprehenderit cumque
-            adipisci! Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere voluptatem mollitia, porro
-            earum incidunt fugit nisi. Temporibus doloribus sed, quidem at fugit vero et in accusamus nihil delectus reprehenderit.</p>
+            <p>This is a Marvel app that currently lets you look through Marvel heroes.</p>
           </section>
 
           <div className="pimg2">
@@ -87,26 +102,28 @@ class App extends Component {
               </span>
             </div>
             <div>
-              <img src={Spiderman} className="spider-man" alt="spider-man"/>
+              <img src={Spiderman} className="spider-man" alt="spider-man" />
             </div>
           </div>
 
           <section className="section section2">
-            {heros.map(hero => (
+            <form>
+              <input
+                placeholder="Search for..."
+                ref={input => this.search = input}
+                onChange={this.handleInputChange}
+              />
+              <p>{this.state.query}</p>
+              <Suggestions results={this.state.results} />
+            </form>
+
+            {/* {heros.map(hero => (
               <div className="hero-thumbnail" key={hero.name}>
                 {hero.name}
-                {/* {filteredHeros.map(hero => {
-              <div></div>
-            }) }*/
-                }
-                <br></br>
-                <a href="">
-                  <img className="hero-thumbnail" src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`} alt="hero-thumbnail"/>
-                </a>
               </div>
-            ))}
+            ))} */}
 
-            <div className="button">
+            <div className="button-container">
               <button className="previous-page" onClick={() => this.ajaxCall(this.state.offset - 5)}>Previous Page</button>
               <button className="next-page" onClick={() => this.ajaxCall(this.state.offset + 5)}>Next Page</button>
             </div>
@@ -115,14 +132,10 @@ class App extends Component {
           <div className="pimg3">
             <div className="ptext">
               <span className="border">
-              © 2019 MARVEL, Data provided by Marvel.
+                © 2019 MARVEL, Data provided by Marvel.
               </span>
             </div>
           </div>
-
-          {/* <input className="search-bar" placeholder="Search..."/> */}
-
-
         </div>
       );
     }

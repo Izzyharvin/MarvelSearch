@@ -8,21 +8,32 @@
   border-radius: 25%;
 }
 
-.button {
+.button-container {
   text-align: center;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 .previous-page, .next-page {
   position: relative;
   display: block;
   padding: 10px;
+  border: 0;
+  background-color: transparent;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.8s ease;
 }
 
 .previous-page:hover, .next-page:hover {
   background: darkblue;
+}
+
+.previous-page {
+  margin-right: 30px;
 }
 
 body, html {
@@ -55,17 +66,17 @@ body, html {
 }
 
 .pimg1 {
-  background-image: url("./img/marvel-heroes.jpg");
+  background-image: url("../img/marvel-heroes.jpg");
   min-height: 600px;
 }
 
 .pimg2 {
-  background-image: url("./img/avengers-tower.png");
+  background-image: url("../img/avengers-tower.png");
   min-height: 400px;
 }
 
 .pimg3 {
-  background-image: url("./img/marvel-villians.jpg");
+  background-image: url("../img/marvel-villians.jpg");
   min-height: 400px;
 }
 

@@ -1,18 +1,7 @@
-.hero-thumbnail {
-  height: 200px;
-  width: 150px;
-  text-align: center;
-  display: inline-block;
-  padding: 20px;
-  margin-right: 40px;
-  border-radius: 25%;
-}
-
 .button-container {
   text-align: center;
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
+  margin-top: 80px;
+  display: inline-block;
 }
 
 .previous-page, .next-page {
@@ -30,10 +19,6 @@
 
 .previous-page:hover, .next-page:hover {
   background: darkblue;
-}
-
-.previous-page {
-  margin-right: 30px;
 }
 
 body, html {

@@ -55,8 +55,8 @@ class App extends Component {
       query: this.search.value
     }, () => {
       if (this.state.query && this.state.query.length > 1) {
-        if (this.state.query.length % 2 === 0) {
-          this.getInfo()
+        if (this.state.query.length % 2) {
+          this.getInfo(this.state.query)
         }
       } else if (!this.state.query) {
       }
@@ -64,7 +64,7 @@ class App extends Component {
   }
 
   render() {
-    const { error, isLoaded, heros } = this.state;
+    const { error, isLoaded } = this.state;
     // const filteredHeros = heros.filter(heros => {
     //   if (heros.name.indexOf(this.state.keyword) !== -1) {
     //     return heros
@@ -122,6 +122,7 @@ class App extends Component {
                 {hero.name}
               </div>
             ))} */}
+            <br></br>
 
             <div className="button-container">
               <button className="previous-page" onClick={() => this.ajaxCall(this.state.offset - 5)}>Previous Page</button>

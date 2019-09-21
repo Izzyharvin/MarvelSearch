@@ -10,12 +10,19 @@
 
 .button {
   text-align: center;
-  display: inline-block;
-  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-.previous-page {
-  margin-right: 20px;
+.previous-page, .next-page {
+  position: relative;
+  display: block;
+  padding: 10px;
+}
+
+.previous-page:hover, .next-page:hover {
+  background: darkblue;
 }
 
 body, html {
@@ -25,9 +32,11 @@ body, html {
 }
 
 .loading {
-  font-size: 100px;
   text-align: center;
   margin-top: 40vh;
+  position: relatives;
+  font-size: 8rem;
+  letter-spacing: 0.05rem;
 }
 
 .ironman{

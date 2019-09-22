@@ -27,7 +27,7 @@ class App extends Component {
   }
 
   ajaxCall = offset => {
-    fetch(`https://gateway.marvel.com/v1/public/characters?limit=5&ts=1&apikey=cde74825b051f73f560e3fbda220c6a9&hash=43b5fe08ed53028010417a0edce88540&offset=${offset}`)
+    fetch(`https://gateway.marvel.com/v1/public/characters?limit=10&ts=1&apikey=cde74825b051f73f560e3fbda220c6a9&hash=43b5fe08ed53028010417a0edce88540&offset=${offset}`)
       .then(res => res.json())
       .then(
         (heros) => {
@@ -56,7 +56,7 @@ class App extends Component {
     }, () => {
       if (this.state.query && this.state.query.length > 1) {
         if (this.state.query.length % 2) {
-          this.getInfo(this.state.query)
+          this.ajaxCall()
         }
       } else if (!this.state.query) {
       }
@@ -92,7 +92,7 @@ class App extends Component {
           </div>
 
           <section className="section section1">
-            <p>This is a Marvel app that currently lets you look through Marvel heroes.</p>
+            <p>This is a Marvel app that currently lets you look through Marvel heroes. You can also click on the link button that will take you to the marvel website and show you the list of comics for that Hero</p>
           </section>
 
           <div className="pimg2">
@@ -108,7 +108,7 @@ class App extends Component {
 
           <section className="section section2">
             <form>
-              <input
+              <input className="input"
                 placeholder="Search for..."
                 ref={input => this.search = input}
                 onChange={this.handleInputChange}
@@ -125,8 +125,8 @@ class App extends Component {
             <br></br>
 
             <div className="button-container">
-              <button className="previous-page" onClick={() => this.ajaxCall(this.state.offset - 5)}>Previous Page</button>
-              <button className="next-page" onClick={() => this.ajaxCall(this.state.offset + 5)}>Next Page</button>
+              <button className="previous-page" onClick={() => this.ajaxCall(this.state.offset - 10)}>Previous Page</button>
+              <button className="next-page" onClick={() => this.ajaxCall(this.state.offset + 10)}>Next Page</button>
             </div>
           </section>
 

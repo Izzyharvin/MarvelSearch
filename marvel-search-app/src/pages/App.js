@@ -1,13 +1,13 @@
 // import ReactDOM from "react-dom";
 import React, { Component } from 'react';
 import './App.css';
-import Ironman from "../img/ironman.png";
 import Spiderman from "../img/spider-man.png";
 import Navbar from "../components/Navbar";
 import Suggestions from "../components/Suggestions";
 
 
-// const HASH_KEY = process.env.HASH_KEY;
+// const { API_KEY } = process.env
+const API_URL = `https://gateway.marvel.com/v1/public/characters`
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +15,6 @@ class App extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      heros: [],
       offset: 0,
       query: '',
       results:[]
@@ -27,15 +26,14 @@ class App extends Component {
   }
 
   ajaxCall = offset => {
-    fetch(`https://gateway.marvel.com/v1/public/characters?limit=10&ts=1&apikey=cde74825b051f73f560e3fbda220c6a9&hash=43b5fe08ed53028010417a0edce88540&offset=${offset}`)
+    fetch(`${API_URL}?limit=10&ts=1&apikey=cde74825b051f73f560e3fbda220c6a9&hash=43b5fe08ed53028010417a0edce88540&offset=${offset}`)
       .then(res => res.json())
       .then(
-        (heros) => {
+        (results) => {
           // console.log(results)
           this.setState({
             isLoaded: true,
-            heros: heros.data.results,
-            results: heros.data.results,
+            results: results.data.results,
             offset
           });
         },
@@ -86,9 +84,6 @@ class App extends Component {
                 Welcome to Marvel Search
               </span>
             </div>
-            <div>
-              <img src={Ironman} className="ironman" alt="ironman" />
-            </div>
           </div>
 
           <section className="section section1">
@@ -116,12 +111,7 @@ class App extends Component {
               <p>{this.state.query}</p>
               <Suggestions results={this.state.results} />
             </form>
-
-            {/* {heros.map(hero => (
-              <div className="hero-thumbnail" key={hero.name}>
-                {hero.name}
-              </div>
-            ))} */}
+            
             <br></br>
 
             <div className="button-container">

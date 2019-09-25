@@ -1,0 +1,16 @@
+.background-picture {
+    background-image: url("../../pictures/thor.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 90vh; 
+}
+
+body {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.Login {
+    width: 500px;
+    margin-left: 30%;
+}

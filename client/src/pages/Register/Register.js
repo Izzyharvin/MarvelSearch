@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 
 import RegistrationForm from '../../components/RegistrationForm/RegistrationForm';
 import API from '../../lib/API';
+import AuthContext from '../../contexts/AuthContext';
 
 import "./Register.css";
 
 class Register extends Component {
+  static contextType = AuthContext;
+  
   state = {
     error: ""
   }

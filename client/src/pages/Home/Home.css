@@ -41,10 +41,6 @@ body, html {
   letter-spacing: 0.05rem;
 }
 
-.ironman{
-  margin-top: 180px;
-}
-
 .pimg1, .pimg2, .pimg3 {
   position: relative;
   background-position: center;
@@ -110,8 +106,37 @@ body, html {
   background-color: transparent;
 }
 
-@media(max-width: 568px) {
-  .pimg1, .pimg2, .pimg3 {
-      background-attachment: scroll;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .pimg1, .pimg2, .pimg3, .spider-man {
+    background-attachment: fixed;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .pimg1, .pimg2, .pimg3, .spider-man {
+    background-attachment: fixed;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .pimg1, .pimg2, .pimg3, .spider-man {
+    background-attachment: fixed;
+  }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .pimg1, .pimg2, .pimg3, .spider-man {
+    background-attachment: fixed;
+  }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .pimg1, .pimg2, .pimg3, .spider-man {
+    background-attachment: fixed;
   }
 }

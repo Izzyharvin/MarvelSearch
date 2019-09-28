@@ -3,7 +3,7 @@
 Marvel Search is a web application that let's you search through different Marvel heros that were created.
 You can also click on the Link to look at the comics for that Hero.
 
-#Link
+# Link
 - Link to app usin heroku: https://marvel-searchapp.herokuapp.com/
 
 # How To Use Marvel Search

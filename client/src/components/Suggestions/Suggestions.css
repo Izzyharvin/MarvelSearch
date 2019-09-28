@@ -7,6 +7,10 @@
     width: 150px;
 }
 
+.media {
+    padding: 5%;
+}
+
 .media-body {
     text-align: left;
 }

@@ -1,6 +1,6 @@
 .button-container {
   margin-top: 80px;
-  margin-right: 120px;
+  margin-right: 40px;
   display: inline-block;
 }
 
@@ -67,7 +67,7 @@ body, html {
   min-height: 400px;
 }
 
-.ptext {
+.ptext1, .ptext2, .ptext3 {
   margin-top: 100px;
 }
 
@@ -86,9 +86,9 @@ body, html {
   color: white;
 }
 
-.ptext {
+.ptext1, .ptext2 {
   position: absolute;
-  top: 50%;
+  top: 30%;
   width: 100%;
   text-align: center;
   color: black;
@@ -96,47 +96,64 @@ body, html {
   letter-spacing: 8px;
 }
 
-.ptext .border {
+.ptext3 {
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  text-align: center;
+  color: black;
+  font-size: 27px;
+  letter-spacing: 8px;
+}
+
+.ptext1 .border, .ptext2 .border, .ptext3 .border {
   background-color: #111;
   color: white;
   padding: 20px;
 }
 
-.ptext .border.trans {
-  background-color: transparent;
+.ptext3 {
+  font-size: 10px;
+}
+
+.spider-man {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .pimg1, .pimg2, .pimg3, .spider-man {
-    background-attachment: fixed;
+  body {
+    background-attachment: scroll;
   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  .pimg1, .pimg2, .pimg3, .spider-man {
-    background-attachment: fixed;
+  body {
+    background-attachment: scroll;
   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .pimg1, .pimg2, .pimg3, .spider-man {
-    background-attachment: fixed;
+  body {
+    background-attachment: scroll;
   }
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  .pimg1, .pimg2, .pimg3, .spider-man {
-    background-attachment: fixed;
+  body {
+    background-attachment: scroll;
   }
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  .pimg1, .pimg2, .pimg3, .spider-man {
-    background-attachment: fixed;
+  body {
+    background-attachment: scroll;
   }
 }

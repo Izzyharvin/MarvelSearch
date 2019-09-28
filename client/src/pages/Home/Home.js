@@ -75,7 +75,7 @@ class HomePage extends Component {
       return (
         <div className="App">
           <div className="pimg1">
-            <div className="ptext">
+            <div className="ptext1">
               <span className="border">
                 Welcome to Marvel Search
               </span>
@@ -87,14 +87,12 @@ class HomePage extends Component {
           </section>
 
           <div className="pimg2">
-            <div className="ptext">
+            <div className="ptext2">
               <span className="border">
                 Super Heroes
               </span>
             </div>
-            <div>
-              <img src={Spiderman} className="spider-man" alt="spider-man" />
-            </div>
+            <img src={Spiderman} className="spider-man" alt="spider-man" />
           </div>
 
           <section className="section section2">
@@ -118,7 +116,7 @@ class HomePage extends Component {
           </section>
 
           <div className="pimg3">
-            <div className="ptext">
+            <div className="ptext3">
               <span className="border">
                 © 2019 MARVEL, Data provided by Marvel.
               </span>

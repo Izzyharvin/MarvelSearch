@@ -8,7 +8,7 @@ const Suggestions = (props) => {
             <img src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`} className="mr-3" alt="hero-thumbnail"/>
             <div className="media-body">
             <h5 className="mt-0" key={hero.id}>{hero.name}</h5>
-            {hero.description}
+            <h5 className="description">{hero.description}</h5>
             <div className="link"><a href={`${hero.urls[0].url}`} className="btn btn-info" role="button">Comic Link</a></div>
             </div>
         </div>

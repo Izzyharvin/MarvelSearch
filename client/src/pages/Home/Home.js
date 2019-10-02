@@ -23,7 +23,7 @@ class HomePage extends Component {
   }
 
   ajaxCall = offset => {
-    fetch(`${API_URL}?limit=5&ts=1&apikey=cde74825b051f73f560e3fbda220c6a9&hash=43b5fe08ed53028010417a0edce88540&offset=${offset}`)
+    fetch(`${API_URL}?limit=20&ts=1&apikey=cde74825b051f73f560e3fbda220c6a9&hash=43b5fe08ed53028010417a0edce88540&offset=${offset}`)
       .then(res => res.json())
       .then(
         (results) => {
@@ -110,8 +110,8 @@ class HomePage extends Component {
             <br></br>
 
             <div className="button-container">
-              <button className="previous-page" onClick={() => this.ajaxCall(this.state.offset - 5)}>Previous Page</button>
-              <button className="next-page" onClick={() => this.ajaxCall(this.state.offset + 5)}>Next Page</button>
+              <button className="previous-page" onClick={() => this.ajaxCall(this.state.offset - 20)}>Previous Page</button>
+              <button className="next-page" onClick={() => this.ajaxCall(this.state.offset + 20)}>Next Page</button>
             </div>
           </section>
 
